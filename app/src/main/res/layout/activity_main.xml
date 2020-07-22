@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_green"
+    android:fitsSystemWindows="true"
+    app:layoutDescription="@xml/main_scene_to_write"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="close"
+    tools:context=".activity.MainActivity">
+
+    <!--타이틀-->
+
+    <TextView
+        android:id="@+id/main_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label"
+        android:textSize="@dimen/text_title_size"
+        android:textColor="@color/text_bright"
+        android:textStyle="bold"
+        android:alpha="0.8"/>
+
+    <TextView
+        android:id="@+id/main_guide_line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_xml_guide_line1"
+        android:textSize="@dimen/text_semi_title_size"
+        android:textColor="@color/text_bright"/>
+
+    <TextView
+        android:id="@+id/main_guide_line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_xml_guide_line2"
+        android:textSize="@dimen/text_semi_title_size"
+        android:textColor="@color/text_bright"/>
+
+    <TextView
+        android:id="@+id/main_guide_line3a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_xml_guide_line3a"
+        android:textSize="@dimen/text_semi_title_size"
+        android:textColor="@color/text_bright"/>
+
+    <TextView
+        android:id="@+id/main_hyeyum_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hyeyum_test_order"
+        android:textSize="@dimen/text_semi_title_size"
+        android:textColor="@color/text_bright"
+        android:textStyle="normal"/>
+
+    <TextView
+        android:id="@+id/main_guide_line3b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_xml_guide_line3b"
+        android:textSize="@dimen/text_semi_title_size"
+        android:textColor="@color/text_bright"/>
+
+    <TextView
+        android:id="@+id/main_guide_line4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_xml_guide_line4"
+        android:textSize="@dimen/text_semi_title_size"
+        android:textColor="@color/text_bright"/>
+
+    <!--글쓰기 카드-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_write_card"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="@color/background"
+        app:cardElevation="@dimen/focus_elevation">
+
+        <EditText
+            android:id="@+id/main_write_editor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:textSize="@dimen/text_content_size"
+            android:textColor="@color/text_dark"
+            android:hint="@string/main_xml_write_guide"
+            android:alpha="0"
+            android:visibility="gone"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageButton
+        android:id="@+id/main_write_toggle_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/space_padding"
+        android:background="?selectableItemBackgroundBorderless"
+         app:srcCompat="@drawable/object_add"
+        android:tint="@color/text_dark"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:elevation="@dimen/focus_elevation"/>
+
+    <!--리스트 카드-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_write_menu_top_card"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        style="@style/RoundOnlyTopCardViewStyle"
+        app:cardBackgroundColor="@color/card_bright">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/main_write_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/inner_padding"
+                android:text="@string/hyeyum_test_date"
+                android:textSize="@dimen/text_content_size"
+                android:textColor="@color/text_dark"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/main_write_menu_top_container"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:elevation="@dimen/focus_elevation">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:background="?selectableItemBackgroundBorderless"
+            app:srcCompat="@drawable/object_keep"
+            android:tint="@color/text_dark"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:onClick="keep"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:background="?selectableItemBackgroundBorderless"
+            app:srcCompat="@drawable/object_forget"
+            android:tint="@color/text_dark"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:onClick="forget"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_list_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_bright"
+        app:cardElevation="@dimen/card_elevation"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/inner_padding">
+
+            <TextView
+                android:id="@+id/main_hyeyum_example_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/text_dark"
+                android:text="@string/hyeyum_test_information"
+                android:textSize="@dimen/text_semi_content_size"
+                android:textColor="@android:color/transparent"
+                android:alpha="0.3"
+                android:transitionName="hyeyumExampleInformation"/>
+
+            <TextView
+                android:id="@+id/main_hyeyum_example_hyeyum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_padding"
+                android:background="@color/text_dark"
+                android:text="@string/hyeyum_test_hyeyum"
+                android:textSize="@dimen/text_content_size"
+                android:textColor="@android:color/transparent"
+                android:alpha="0.5"
+                android:transitionName="hyeyumExampleHyeyum"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_write_menu_bottom_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/RoundOnlyBottomCardViewStyle"
+        app:cardBackgroundColor="@color/card_bright">
+        
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/space_padding"
+                android:paddingEnd="@dimen/space_padding"
+                app:singleLine="true">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_happy"
+                    android:tag="happy"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_sad"
+                    android:tag="sad"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_surprised"
+                    android:tag="surprised"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_calm"
+                    android:tag="calm"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_jealousy"
+                    android:tag="jealousy"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_pride"
+                    android:tag="pride"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_despair"
+                    android:tag="despair"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_grateful"
+                    android:tag="grateful"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_irritation"
+                    android:tag="irritation"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_confidence"
+                    android:tag="confidence"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_regret"
+                    android:tag="regret"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_heroism"
+                    android:tag="heroism"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_compassion"
+                    android:tag="compassion"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:text="@string/hyeyum_emotion_tag_fear"
+                    android:tag="fear"/>
+
+            </com.google.android.material.chip.ChipGroup>
+            
+        </HorizontalScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

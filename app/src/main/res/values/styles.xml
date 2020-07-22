@@ -1,0 +1,72 @@
+<resources>
+
+    <!--액티비티-->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/material_base</item>
+        <item name="colorPrimaryDark">@color/material_base</item>
+        <item name="colorAccent">@color/material_accent</item>
+
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+    </style>
+
+    <style name="TransparentTheme" parent="AppTheme">
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+
+    </style>
+
+    <style name="SharedTheme" parent="TransparentTheme">
+
+        <item name="android:windowEnterTransition">@transition/fade</item>
+        <item name="android:windowExitTransition">@transition/fade</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/change_bounds</item>
+        <item name="android:windowSharedElementExitTransition">@transition/change_bounds</item>
+
+    </style>
+
+    <!--뷰-->
+
+    <style name="RoundOnlyTopCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_RoundOnlyTopCardViewStyle</item>
+
+    </style>
+
+    <style name="ShapeAppearanceOverlay_RoundOnlyTopCardViewStyle" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/round_radius</item>
+        <item name="cornerSizeTopLeft">@dimen/round_radius</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+
+    </style>
+
+    <style name="RoundOnlyBottomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_RoundOnlyBottomCardViewStyle</item>
+
+    </style>
+
+    <style name="ShapeAppearanceOverlay_RoundOnlyBottomCardViewStyle" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/round_radius</item>
+        <item name="cornerSizeBottomLeft">@dimen/round_radius</item>
+
+    </style>
+
+</resources>

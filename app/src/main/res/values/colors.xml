@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--아이콘-->
+    <color name="icon_background">#555157</color>
+
+    <!--머테리얼-->
+    <color name="material_base">#F3F3F3</color>
+    <color name="material_accent">#52C570</color>
+
+    <!--배경-->
+    <color name="background">#F3F3F3</color>
+    <color name="card_bright">#FFFFFF</color>
+    <color name="card_dark">#383838</color>
+
+    <!--텍스트-->
+    <color name="text_bright">#FFFFFF</color>
+    <color name="text_semi_bright">#E6E6E6</color>
+    <color name="text_dark">#333333</color>
+    <color name="text_semi_dark">#4E4E4E</color>
+
+</resources>

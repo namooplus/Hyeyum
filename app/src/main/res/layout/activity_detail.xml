@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#CC000000"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="close"
+    tools:context=".activity.DetailActivity">
+
+    <!--내용-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detail_card_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/inner_padding"
+        android:layout_marginEnd="@dimen/inner_padding"
+        app:cardElevation="@dimen/sub_card_elevation"
+        app:cardCornerRadius="@dimen/round_radius"
+        app:cardBackgroundColor="@color/card_bright"
+        android:transitionName="hyeyumDetail"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/inner_padding">
+
+            <TextView
+                android:id="@+id/detail_card_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hyeyum_test_information"
+                android:textColor="@color/text_semi_dark"
+                android:textSize="@dimen/text_semi_content_size" />
+
+            <TextView
+                android:id="@+id/detail_card_hyeyum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hyeyum_test_hyeyum"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_content_size"
+                android:layout_marginTop="@dimen/space_padding"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--메뉴-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detail_meun_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/inner_padding"
+        android:layout_marginStart="@dimen/inner_padding"
+        android:layout_marginEnd="@dimen/inner_padding"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/round_radius"
+        app:cardBackgroundColor="@color/card_bright">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/inner_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="여기에 상세정보가 표시됩니다."
+                android:textSize="@dimen/text_content_size"
+                android:textColor="@color/text_dark" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
